@@ -1,10 +1,11 @@
-import CommandPalette from "@/components/MultipleSelection";
-import Image from "next/image";
+import { SearchBar } from "@/components/SearchBar";
+import Link from "next/link";
 
-export default function Home() {
+export default function Command() {
   return (
     <div>
-      <CommandPalette />
+      <Link href="/">Topに戻る</Link>
+      <SearchBar />
     </div>
   );
 }
