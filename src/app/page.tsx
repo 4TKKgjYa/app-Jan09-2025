@@ -1,11 +1,12 @@
+import { MailForm } from "@/components/MainForm";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <div>
-      <Link href="/command">Command</Link>
-      <Button>送信</Button>
-    </div>
+    <main className="flex min-h-screen flex-col items-center p-24">
+      <h2 className="font-semibold text-2xl mb-4">お問い合わせフォーム</h2>
+      <MailForm />
+    </main>
   );
 }
