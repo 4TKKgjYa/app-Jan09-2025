@@ -15,8 +15,6 @@ export const useMailForm = () => {
   });
 
   const onSubmit = useCallback((values: any) => {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
     console.log(values)
   }, []);
 
