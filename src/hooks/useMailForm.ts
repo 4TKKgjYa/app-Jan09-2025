@@ -15,7 +15,17 @@ export const useMailForm = () => {
   });
 
   const onSubmit = useCallback((values: any) => {
-    console.log(values)
+    try {
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/send`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      })
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
 
   return { form, onSubmit };
