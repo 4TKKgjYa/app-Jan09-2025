@@ -14,14 +14,15 @@ export const useMailForm = () => {
     }
   });
 
-  const onSubmit = useCallback((values: any) => {
+  const onSubmit = useCallback(async (values: any) => {
+    const { username, subject, email, content } = values;
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/send`, {
+      await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/send`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(values),
+        body: JSON.stringify({ username, subject, email, content }),
       })
     } catch (error) {
       console.log(error);
