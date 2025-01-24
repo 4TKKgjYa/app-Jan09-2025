@@ -75,11 +75,18 @@ export const MailForm = () => {
         <FormField
           control={form.control}
           name="file"
-          render={({ field }) => (
+          render={({ field: { onChange, ...fieldProps } }) => (
             <FormItem>
               <FormLabel>添付画像</FormLabel>
               <FormControl>
-                <Input accept="image/*" type="file" placeholder="ユーザー名" {...field} />
+                <Input
+                  accept="image/*"
+                  type="file"
+                  placeholder="ユーザー名"
+                  onChange={(e) => {
+                    onChange(e.target.files)
+                  }}
+                  {...fieldProps} />
               </FormControl>
               <FormMessage />
             </FormItem>
