@@ -72,10 +72,13 @@ export const MailForm = () => {
             </FormItem>
           )}
         />
+        {/* １．Inputタグ内にonChangeイベントを作成する */}
+        {/* ２．このonChangeイベントはShadcnがrender引数内で用意したonChangeと同一のもの */}
+        {/* ３．onChangeイベント内でe.target.valueを変更することで、fieldPropsで認識されて、submitを押す際にこのe.target.valueが含まれるようになる？ */}
         <FormField
           control={form.control}
           name="file"
-          render={({ field: { onChange, ...fieldProps } }) => (
+          render={({ field: { value, onChange, ...fieldProps } }) => (
             <FormItem>
               <FormLabel>添付画像</FormLabel>
               <FormControl>
