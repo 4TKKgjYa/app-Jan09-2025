@@ -74,8 +74,9 @@ export const MailForm = () => {
         />
         {/* １．Inputタグ内にonChangeイベントを作成する */}
         {/* ２．shadcnのrender引数に含まれているonChangeトリガーをonChangeイベントに当てはめる */}
-        {/* ３．onChangeイベントが実行されることで、e.target.valueが変更されたタイミングで正常にfieldPropsで認識されて、submitを押す際にこのe.target.valueが含まれるようになる？ */}
-        {/* ４．fieldのvalueはなんのため？（これがないとonChangeイベントでファイルが認識されない） */}
+        {/* ３．onChangeイベントが実行されることで、e.target.valueが変更されたタイミングでファイルオブジェクトにアクセスできるようになる */}
+        {/* ４．ファイルオブジェクトを取得することで正常にfieldPropsで認識され、submitを押す際にこのe.target.valueが含まれるようになる？ */}
+        {/* ５．fieldのvalueはなんのため？（これがないとonChangeイベントでファイルが認識されない） */}
         <FormField
           control={form.control}
           name="file"
